@@ -79,13 +79,25 @@
             android:textSize="20dp" />
     </RadioGroup>
 
+    <EditText
+        android:id="@+id/etImageurl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="-96dp"
+        android:height="50dp"
+        android:gravity="center"
+        android:hint="Enter Image Url Here"
+        android:inputType="text" />
+
     <Button
         android:id="@+id/btnAddstdnt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         android:layout_gravity="center_horizontal"
-        android:onClick="onclickbuttonMethod"
+        android:layout_marginTop="110dp"
         android:text="Add Student" />
 
 

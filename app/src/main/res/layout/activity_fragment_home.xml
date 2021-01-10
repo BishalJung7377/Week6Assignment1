@@ -5,16 +5,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:Context=".fragments.HomeFragment">
 
-    <TextView
-        android:id="@+id/tvtitle"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="177dp"
-        android:gravity="center"
-        android:text="Home Page Fragments"
-        android:textAlignment="center"
-        android:textColor="#00416A"
-        android:textSize="50dp" />
+        android:layout_height="match_parent"
+        android:layout_margin="7dp"
+        />
 
 </RelativeLayout>
