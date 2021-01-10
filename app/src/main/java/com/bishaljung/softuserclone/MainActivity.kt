@@ -6,7 +6,7 @@ import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
 import com.bishaljung.softuserclone.Fragments.AddStdntFragment
 import com.bishaljung.softuserclone.Fragments.HomeFragment
-import com.bishaljung.softuserclone.Fragments.ProfileFragment
+import com.bishaljung.softuserclone.Fragments.AboutUsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -28,12 +28,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val navListener =
-        BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        BottomNavigationView.OnNavigationItemSelectedListener {
+                item ->
             var selectedFragment: Fragment? = null
             when (item.itemId) {
                 R.id.nav_home -> selectedFragment = HomeFragment()
                 R.id.nav_add -> selectedFragment = AddStdntFragment()
-                R.id.nav_user -> selectedFragment = ProfileFragment()
+                R.id.nav_user -> selectedFragment = AboutUsFragment()
             }
             if (selectedFragment != null) {
                 getSupportFragmentManager().beginTransaction().replace(
