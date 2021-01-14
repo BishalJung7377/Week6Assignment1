@@ -4,7 +4,6 @@ import android.os.Parcel
 import android.os.Parcelable
 
 class StudentModel(
-    val studentId: Int? = null,
     val studentName: String? = null,
     val studentAge: String? = null,
     val sudentGender: String? = null,
@@ -12,7 +11,6 @@ class StudentModel(
     val studentImage: String? = null,
         ):Parcelable {
     constructor(parcel: Parcel) : this(
-        parcel.readValue(Int::class.java.classLoader) as? Int,
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
@@ -22,7 +20,6 @@ class StudentModel(
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeValue(studentId)
         parcel.writeString(studentName)
         parcel.writeString(studentAge)
         parcel.writeString(sudentGender)
