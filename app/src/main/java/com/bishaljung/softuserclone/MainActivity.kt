@@ -11,6 +11,7 @@ import com.bishaljung.softuserclone.Fragments.AddStdntFragment
 import com.bishaljung.softuserclone.Fragments.HomeFragment
 import com.bishaljung.softuserclone.Fragments.AboutUsFragment
 import com.bishaljung.softuserclone.Model.StudentModel
+import com.bishaljung.softuserclone.UserDataObject.StudentDataObject
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         fragmentcont = findViewById(R.id.fragmentcont)
         bottomNav = findViewById(R.id.bottomNav)
+        StudentDataObject.loadStudent()
 
 
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)

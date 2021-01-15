@@ -17,25 +17,29 @@ class StudentDetailAdapter(
 //    val studentList: ArrayList<StudentModel>
 ) : RecyclerView.Adapter<StudentDetailAdapter.StudentDetailViewHolder>() {
     private var studentList: MutableList<StudentModel> = studentdata as MutableList<StudentModel>
-     inner class StudentDetailViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
-         fun bind(StudentModel: StudentModel, index: Int) {
 
-               val  imgstudent = view.findViewById<ImageView>(R.id.imgstudent)
-             val   tvstudentname = view.findViewById<TextView>(R.id.tvstudentname)
-             val     tvStudentAge = view.findViewById<TextView>(R.id.tvStudentAge)
-             val  tvstudentLocation = view.findViewById<TextView>(R.id.tvstudentLocation)
-             val   tvGender = view.findViewById<TextView>(R.id.tvGender)
-             val  imgDelete = view.findViewById<ImageView>(R.id.imgDelete)
-             tvstudentname.text = StudentModel.studentName.toString()
-             tvStudentAge.text = StudentModel.studentAge.toString()
-             tvstudentLocation.text = StudentModel.studentLocation.toString()
-             Glide.with(view.context)
-                 .load(StudentModel.studentImage.toString())
-                 .into(imgstudent)
-             tvGender.text= StudentModel.sudentGender.toString()
-             imgDelete.setOnClickListener {deleteItem(index)}
-             }
-         }
+    inner class StudentDetailViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
+        fun bind(StudentModel: StudentModel, index: Int) {
+
+            val imgstudent = view.findViewById<ImageView>(R.id.imgstudent)
+            val tvstudentname = view.findViewById<TextView>(R.id.tvstudentname)
+            val tvStudentAge = view.findViewById<TextView>(R.id.tvStudentAge)
+            val tvstudentLocation = view.findViewById<TextView>(R.id.tvstudentLocation)
+            val tvGender = view.findViewById<TextView>(R.id.tvGender)
+            val imgDelete = view.findViewById<ImageView>(R.id.imgDelete)
+
+            tvstudentname.text = StudentModel.studentName.toString()
+            tvStudentAge.text = StudentModel.studentAge.toString()
+            tvstudentLocation.text = StudentModel.studentLocation.toString()
+            Glide.with(view.context)
+                .load(StudentModel.studentImage.toString())
+                .into(imgstudent)
+            tvGender.text = StudentModel.sudentGender.toString()
+            imgDelete.setOnClickListener {
+                deleteStudent(index)
+            }
+        }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudentDetailViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -44,25 +48,10 @@ class StudentDetailAdapter(
     }
 
     override fun onBindViewHolder(holder: StudentDetailViewHolder, position: Int) {
-
         holder.bind(studentList[position], position)
-    //        val studentDetail = studentList[position]
-//        Glide.with(context).load(studentDetail.studentImage).into(holder.imgstudent)
-//        holder.tvstudentname.text = studentDetail.studentName
-//        holder.tvStudentAge.text = studentDetail.studentAge
-//        holder.tvstudentLocation.text = studentDetail.studentLocation
-//        holder.tvGender.text = studentDetail.sudentGender
-//
-//
-//        holder.imgDelete.setOnClickListener {
-//            studentList.removeAt(position)
-//            notifyItemRemoved(position)
-//            notifyDataSetChanged()
-//            notifyItemRangeChanged(position, studentList.size)
-//        }
-
     }
-    fun deleteItem(index: Int){
+
+    fun deleteStudent(index: Int) {
         studentList.removeAt(index)
         notifyDataSetChanged()
     }

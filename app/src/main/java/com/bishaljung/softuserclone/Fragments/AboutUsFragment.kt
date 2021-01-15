@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
 import com.bishaljung.softuserclone.R
 
 class AboutUsFragment: Fragment() {
+    private lateinit var webviewSoftwarica: WebView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -17,11 +19,11 @@ class AboutUsFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.activity_fragment_aboutus,container, false)
-//        wvAboutUs=view.findViewById(R.id.wvAboutUs)
-//        wvAboutUs.settings.javaScriptEnabled=true
-//        val webViewClient = WebViewClient()
-//        wvAboutUs.webViewClient=webViewClient
-//        wvAboutUs.loadUrl("https://softwarica.edu.np");
+        webviewSoftwarica=view.findViewById(R.id.webviewSoftwarica)
+        webviewSoftwarica.settings.javaScriptEnabled=true
+        val webViewClient = WebViewClient()
+        webviewSoftwarica.webViewClient=webViewClient
+        webviewSoftwarica.loadUrl("https://softwarica.edu.np");
         return view
     }
 }

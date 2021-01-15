@@ -23,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
         btnIdLogin =  findViewById(R.id.btnIdlogin)
         etSignup =  findViewById(R.id.etSignup)
         btnIdLogin.setOnClickListener {
-            if (etEmail.text.toString() == "a" && etPassword.text.toString() == "a") {
+            if (etEmail.text.toString() == "softwarica" && etPassword.text.toString() == "coventry") {
                 val intent= Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 Toast.makeText(this, "Welcome", Toast.LENGTH_SHORT).show()
